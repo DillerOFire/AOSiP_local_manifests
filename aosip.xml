@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote  name="aicp"
+           fetch="git://github.com/AICP"
+	  revision="r11.0" />
+
+  <remote  name="dblt"
+           fetch="https://github.com/DillerOFire"
+          revision="debloat" />
+
+	<remove-project name="platform_packages_apps_DU-Themes"/>
+
+	<remove-project name="platform_frameworks_base"/>	
+	<project path="frameworks/base" name="platform_frameworks_base" remote="dblt"/>
+    <remove-project name="platform_vendor_overlay"/>
+    <project path="vendor/overlay" name="platform_vendor_overlay" remote="dblt"/>
+    <remove-project name="platform_vendor_aosip"/>
+	<project path="vendor/aosip" name="platform_vendor_aosip" remote="dblt"/>
+    <remove-project name="platform_packages_apps_Settings"/>
+	<project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="dblt"/>
+        
+    <remove-project name="platform_packages_apps_Dialer" />
+    <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="aicp" />
+    
+</manifest>
